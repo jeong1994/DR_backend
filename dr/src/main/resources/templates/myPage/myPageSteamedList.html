@@ -49,7 +49,7 @@
                 <div class="myPage-pictureprideOne" th:each="steam : ${userSteamList}">
                     <div class="myPage-pictureLeft">
                         <a th:href="${steam.recipeType == '챗봇레시피' ? '/recipe/chatBotDetailPage?recipeNumber=' + steam.recipeNumber : '/recipe/myDetailPage?recipeNumber=' + steam.recipeNumber}">
-                            <img id="myPage-pictureOne" th:src="@{/image/myPage/{photo}(photo=${steam.photoLocal})}" alt="레시피 사진">
+                            <img id="myPage-pictureOne" th:src="@{/image/photo/} + ${steam.photoOriginal}" alt="레시피 사진">
                         </a>
                     </div>
                     <div class="myPage-pictureInside">

@@ -71,7 +71,6 @@ public class RecipeController {
         if (recipeNumber == null) {
             throw new IllegalArgumentException("Recipe number is required.");
         }
-
         MyRecipeCommentDTO commentDTO = new MyRecipeCommentDTO();
         commentDTO.setRecipeNumber(recipeNumber);
         commentDTO.setReplyText(replyText);
@@ -195,7 +194,6 @@ public class RecipeController {
     public String recipeWriteForm(Model model) {
         model.addAttribute("myRecipeWriteDTO", new MyRecipeWriteDTO());
         // 빈 DTO 객체 생성 및 전달
-        log.info("여기는 GetMapping@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         return "recipe/myRecipeWriter";  // myRecipeWriter.html로 데이터 전달
     }
 
@@ -208,7 +206,6 @@ public class RecipeController {
             @RequestParam("photoLocal") String photoLocal,
             @RequestParam("photoSize") String photoSize,
             @SessionAttribute(value = "userNumber", required = false) Long userNumber) {
-
         // 1. MyRecipeWriteDTO 생성 (레시피 정보)
         MyRecipeWriteDTO myRecipeWriteDTO = new MyRecipeWriteDTO();
         myRecipeWriteDTO.setRecipeTitle(recipeTitle);
@@ -216,15 +213,11 @@ public class RecipeController {
         myRecipeWriteDTO.setUserNumber(userNumber);
         myRecipeWriteDTO.setRecipeType("나만의레시피");
 
-        log.info(myRecipeWriteDTO.toString()+"aslknlksdnfvklsdnklgnkldgsnkl;bsd");
-
         // 2. RecipePhotoDTO 생성 (사진 정보)
         RecipePhotoDTO recipePhotoDTO = new RecipePhotoDTO();
         recipePhotoDTO.setPhotoOriginal(photoOriginal);
         recipePhotoDTO.setPhotoLocal(photoLocal);
         recipePhotoDTO.setPhotoSize(photoSize);
-
-        log.info(recipePhotoDTO.toString()+"asdlknldabndfklnlkldbba");
 
         // 3. RecipeService 호출하여 레시피와 사진 저장
         recipeService.saveRecipe(myRecipeWriteDTO, recipePhotoDTO);
@@ -276,9 +269,7 @@ public class RecipeController {
         ScoreCheckDTO scoreCheckDTO = new ScoreCheckDTO();
         scoreCheckDTO.setUserNumber(userNumber);  // 사용자 번호 설정
         scoreCheckDTO.setScoreGet(10L);           // 10점 설정
-
         recipeService.insertScoreByRecipe(scoreCheckDTO);  // 환경기여 점수 추가
-
 
         // 5. 성공 메시지 전달 후, 리디렉션
         return "redirect:/recipe/chatBotRecipeList"; // 리디렉션 URL은 필요에 맞게 수정
@@ -393,8 +384,6 @@ public class RecipeController {
     @PostMapping("/like")
     public ResponseEntity<Void> addLike(
             @SessionAttribute(value = "userNumber", required = false) Long userNumber, @RequestBody RecipeSteamDTO recipeSteamDTO) {
-        log.info(recipeSteamDTO.toString()+" lkansfdlkj rwlkmner");
-        log.info(userNumber + "ewlkjfnl");
         try {
             recipeSteamDTO.setUserNumber(userNumber);
             recipeSteamDTO.setRecipeNumber(recipeSteamDTO.getRecipeNumber());
@@ -410,7 +399,6 @@ public class RecipeController {
     @PostMapping("/unLike")
     public ResponseEntity<Void> removeLike(
             @SessionAttribute(value = "userNumber", required = false) Long userNumber, @RequestBody RecipeSteamDTO recipeSteamDTO) {
-
         try {
             recipeSteamDTO.setUserNumber(userNumber);
             recipeSteamDTO.setRecipeNumber(recipeSteamDTO.getRecipeNumber());
@@ -427,7 +415,6 @@ public class RecipeController {
     @PostMapping("/deleteRecipe")
     public String deleteRecipe(@RequestParam("recipeNumber2") Long recipeNumber) {
         recipeService.deleteRecipeAndPhoto(recipeNumber);
-
         return "redirect:/recipe/myRecipeList";
     }
 
@@ -435,7 +422,6 @@ public class RecipeController {
     @PostMapping("/deleteChatBotRecipe")
     public String updateChatBotRecipe(@RequestParam("recipeNumber5") Long recipeNumber) {
         recipeService.deleteChatBot(recipeNumber);
-
         return "redirect:/recipe/chatBotRecipeList";
     }
 
@@ -448,8 +434,6 @@ public class RecipeController {
                                @RequestParam(value = "photoOriginal", required = false) String photoOriginal,
                                @RequestParam(value = "photoSize", required = false) String photoSize,// 사진 파일 경로 추가
                                Model model) {
-        // 필요한 로직 처리 (예: 데이터베이스 업데이트)
-
         // 수정 페이지로 이동하면서 데이터 전달
         model.addAttribute("recipeNumber", recipeNumber);
         model.addAttribute("recipeTitle", recipeTitle);
@@ -485,8 +469,6 @@ public class RecipeController {
                                       @RequestParam(value = "photoOriginal", required = false) String photoOriginal,
                                       @RequestParam(value = "photoSize", required = false) String photoSize,// 사진 파일 경로 추가
                                       Model model) {
-        // 필요한 로직 처리 (예: 데이터베이스 업데이트)
-        log.info("a21321sfdafsdvxczvxv  Received recipeNumber: " + recipeNumber);
         // 수정 페이지로 이동하면서 데이터 전달
         model.addAttribute("recipeNumber", recipeNumber);
         model.addAttribute("recipeTitle", recipeTitle);
@@ -494,7 +476,6 @@ public class RecipeController {
         model.addAttribute("photoLocal", photoLocal); // photoLocal 추가
         model.addAttribute("photoOriginal", photoOriginal); // photoOriginal 추가
         model.addAttribute("photoSize", photoSize);
-
 
         return "recipe/chatBotRecipeModify"; // 수정 페이지의 템플릿 이름
     }
@@ -513,6 +494,5 @@ public class RecipeController {
             return "redirect:/recipe/chatBotRecipeModify";
         }
     }
-
 
 }

@@ -36,7 +36,7 @@ public interface RankMapper {
 
 
     // 월초 1등부터 5등까지의 사용자에게 포인트를 적립하는 메서드
-    int insertPoint(PointCheckDTO pointCheckDTO);
+    void insertPoint(PointCheckDTO pointCheckDTO);
 
 
 

@@ -66,8 +66,8 @@
             RANK_DATA.USER_NICKNAME,       -- 사용자 닉네임
             RANK_DATA.PHOTO_LOCAL,         -- 사용자 프로필 사진
             RANK_DATA.SCORE_GET,            -- 사용자 환경 기여 점수 합계
-            RANK_DATA.PROFILE_PIC,
-            RANK_DATA.USER_NUMBER
+            RANK_DATA.PROFILE_PIC, -- 카카오톡 유저 사진
+            RANK_DATA.USER_NUMBER -- 유저 넘버
         FROM (
                  SELECT
                      DENSE_RANK() OVER (ORDER BY SUM(S.SCORE_GET) DESC) AS RANK,  -- 점수 합계로 순위 계산
@@ -75,7 +75,7 @@
                      P.PHOTO_LOCAL,                                              -- 프로필 사진
                      SUM(S.SCORE_GET) AS SCORE_GET,                               -- 점수 합계
                      U.USER_NUMBER,                                                -- 사용자 번호
-                     U.PROFILE_PIC
+                     U.PROFILE_PIC                                                 -- 카카오톡 유저 사진
                  FROM DR_USER U                                                    -- 사용자 테이블
                           JOIN DR_SCORE S ON U.USER_NUMBER = S.USER_NUMBER                  -- 점수 테이블과 조인
                           LEFT JOIN DR_PHOTO P ON U.USER_NUMBER = P.USER_NUMBER             -- 사용자와 프로필 사진 조인
@@ -85,7 +85,7 @@
         ]]>
     </select>
 
-    <!-- 월초 포인트 적립 (1등부터 5등까지) -->
+    <!-- 월초 포인트 적립  -->
     <insert id="insertPoint" parameterType="PointCheckDTO">
         INSERT INTO DR_POINT (POINT_NUMBER, POINT_GET, POINT_NOTE, POINT_DATE, USER_NUMBER)
         VALUES (SEQ_POINT_NUMBER.NEXTVAL, #{pointGet}, #{pointNote}, SYSDATE, #{userNumber})

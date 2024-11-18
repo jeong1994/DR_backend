@@ -104,7 +104,7 @@ public class RecipeService {
         return recipeMapper.selectChatBotRecipeComment(recipeNumber);
     }
 
-
+    //나만의 레시피 글쓰기
     @Transactional  // 트랜잭션 관리
     public void saveRecipe(MyRecipeWriteDTO myRecipeWriteDTO, RecipePhotoDTO recipePhotoDTO) {
         // 1. 레시피 정보 먼저 저장 (RECIPE 테이블)

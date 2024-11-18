@@ -15,6 +15,6 @@ public class UserSteamDTO {
     private Long recipeNumber;
     private String recipeTitle;
     private String userNickname;
-    private String photoLocal;
+    private String photoOriginal;
     private String recipeType;
 }

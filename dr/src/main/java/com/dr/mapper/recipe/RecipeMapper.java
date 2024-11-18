@@ -13,7 +13,7 @@ public interface RecipeMapper {
     // 나만의 레시피 목록 조회 (최신순)
     List<MyRecipeListDTO> selectAllPages();
 
-    // 나만의 레시피 목록 조회 (추천순)v
+    // 나만의 레시피 목록 조회 (추천순)
     List<MyRecipeListDTO> selectRecipesGood();
 
     //    챗봇레시피 목록 조회 (최신순)

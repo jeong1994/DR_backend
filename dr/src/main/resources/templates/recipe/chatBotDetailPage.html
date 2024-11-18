@@ -29,7 +29,8 @@
             <div class="chatBotDetailPage-infobox">
                 <div class="chatBotDetailPage-infoFirst">
                     <div class="chatBotDetailPage-infoInBox1">
-                        <img th:src="@{/image/photo/} + ${chatBotRecipeDetail.photoLocal}" alt="사용자 이미지">
+                        <img th:src="@{/image/photo/} + ${chatBotRecipeDetail.photoLocal}" th:if="${chatBotRecipeDetail.photoLocal != null && chatBotRecipeDetail.profilePic == null}" alt="User Image">
+                        <img th:src="${chatBotRecipeDetail.profilePic}" th:if="${chatBotRecipeDetail.photoLocal == null && chatBotRecipeDetail.profilePic != null}" alt="User Image">
                     </div>
                     <div class="chatBotDetailPage-infoInBox2">
                         <p class="chatBotDetailPage-writeName" th:text="${chatBotRecipeDetail.userNickName}"></p>
@@ -97,7 +98,8 @@
                 <div th:each="chatBotRecipeComments : ${chatBotRecipeComments}">
                     <div class="chatBotDetailPage-comment" id="comment${recipeComments.replyNumber}">
                         <div class="chatBotDetailPage-commentUserImg">
-                            <img th:src="@{/image/photo/} + ${chatBotRecipeComments.photoLocal}" alt="User Image">
+                            <img th:src="@{/image/photo/} + ${chatBotRecipeComments.photoLocal}" th:if="${chatBotRecipeComments.photoLocal != null && chatBotRecipeComments.profilePic == null}" alt="User Image">
+                            <img th:src="${chatBotRecipeComments.profilePic}" th:if="${chatBotRecipeComments.photoLocal == null && chatBotRecipeComments.profilePic != null}" alt="User Image">
                         </div>
 
                         <div class="chatBotDetailPage-commentContent">

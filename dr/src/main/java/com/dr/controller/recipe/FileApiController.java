@@ -17,33 +17,28 @@ import java.util.UUID;
 @CrossOrigin(origins = "http://localhost:8888") // CORS 허용
 @RestController
 @RequestMapping("/tui-editor") // 경로 설정
-public class FileApiController {    
+public class FileApiController {
 
     // 이미지가 저장될 디렉토리 경로 설정
     private final String uploadDir = Paths.get("C:", "DR", "dr", "src", "main", "resources", "static", "image", "photo").toString();
-//    private final String uploadDir = Paths.get("C:", "upload").toString();
     // 이미지 업로드 처리 후 JSON 응답 보내기
     @PostMapping("/image-upload")
     public ResponseEntity<Map<String, Object>> uploadEditorImage(@RequestParam("image") final MultipartFile image) {
         if (image.isEmpty()) {
             return ResponseEntity.badRequest().body(Map.of("error", "파일이 비어 있습니다."));
         }
-
         String orgFilename = image.getOriginalFilename();
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
         String extension = orgFilename.substring(orgFilename.lastIndexOf(".") + 1);
         String saveFilename = uuid + "." + extension;
         String fileFullPath = Paths.get(uploadDir, saveFilename).toString();
-
         File dir = new File(uploadDir);
         if (!dir.exists()) {
             dir.mkdirs();
         }
-
         try {
             File uploadFile = new File(fileFullPath);
             image.transferTo(uploadFile);
-
             // 응답에 이미지 정보 포함
             Map<String, Object> response = new HashMap<>();
             response.put("photoOriginal", orgFilename);

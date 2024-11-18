@@ -50,6 +50,8 @@ public class ChatBotService {
         JSONArray choicesArray = responseJson.getJSONArray("choices");
         JSONObject messageObject = choicesArray.getJSONObject(0).getJSONObject("message");
 
+//        System.out.println("챗봇 응답 : " + messageObject.getString("content").trim());
+
         // 응답 반환
 //      return messageObject.getString("content").trim();
 

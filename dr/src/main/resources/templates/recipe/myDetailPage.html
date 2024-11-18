@@ -27,7 +27,8 @@
             <div class="myDetailPage-infobox">
                 <div class="myDetailPage-infoFirst">
                     <div class="myDetailPage-infoInBox1">
-                        <img th:src="@{/image/photo/} + ${recipeDetail.photoLocal}" alt="User Image">
+                        <img th:src="@{/image/photo/} + ${recipeDetail.photoLocal}" th:if="${recipeDetail.photoLocal != null && recipeDetail.profilePic == null}" alt="User Image">
+                        <img th:src="${recipeDetail.profilePic}" th:if="${recipeDetail.photoLocal == null && recipeDetail.profilePic != null}" alt="User Image">
                     </div>
                     <div class="myDetailPage-infoInBox2">
                         <p class="myDetailPage-writeName" th:text="${recipeDetail.userNickName}">작성자</p>
@@ -104,7 +105,8 @@
                 <div th:each="recipeComments : ${recipeComments}">
                     <div class="myDetailPage-comment" id="comment${recipeComments.replyNumber}">
                         <div class="myDetailPage-commentUserImg">
-                            <img th:src="@{/image/photo/} + ${recipeComments.photoLocal}" alt="User Image">
+                            <img th:src="@{/image/photo/} + ${recipeComments.photoLocal}" th:if="${recipeComments.photoLocal != null && recipeComments.profilePic == null}" alt="User Image">
+                            <img th:src="${recipeComments.profilePic}" th:if="${recipeComments.photoLocal == null && recipeComments.profilePic != null}" alt="User Image">
                         </div>
 
                         <div class="myDetailPage-commentContent">

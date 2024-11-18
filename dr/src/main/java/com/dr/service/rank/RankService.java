@@ -33,9 +33,9 @@ public class RankService {
         return rankMapper.fiftyRankList();
     }
 
-    // 월초 1일 00:00 1등 ~ 5등까지 사용자에게 포인트를 적립하는 메서드
-    // @Scheduled(cron = "*/10 * * * * ?") // 10초마다 값이 들어가는지 확인(테스트용)
-    @Scheduled(cron = "0 0 0 1 * ?", zone = "Asia/Seoul")
+//     월초 1일 00:00 1등 ~ 5등까지 사용자에게 포인트를 적립하는 메서드
+//     @Scheduled(cron = "*/10 * * * * ?") // 10초마다 값이 들어가는지 확인(테스트용)
+    @Scheduled(cron = "0 0 0 1 * ? ", zone = "Asia/Seoul")
     public void rewardTop5Users() {
 
         // 1등부터 5등까지 사용자 조회

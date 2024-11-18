@@ -45,7 +45,7 @@
         int todayCheck(@Param("userNumber") Long userNumber);
 
         // 출석 기록 삽입 (CheckDTO 객체를 사용하도록 수정 가능)
-        void insertCheck(CheckDTO checkDTO); // 만약 CheckDTO를 사용한다면 이렇게 변경
+        void insertCheck(CheckDTO checkDTO);
 
         // 개근 여부 확인
         int monthFullCheck(@Param("userNumber") Long userNumber);

@@ -3,7 +3,7 @@
 <mapper namespace="com.dr.mapper.recipe.RecipeMapper">
     <!--    나만의레시피 최신순-->
     <select id="selectAllPages" resultType="MyRecipeListDTO">
-        SELECT R.RECIPE_NUMBER AS recipeNumber,  <!-- 레시피 번호 추가 -->
+        SELECT R.RECIPE_NUMBER AS recipeNumber,
         R.RECIPE_TITLE AS recipeTitle,
         U.USER_NICKNAME AS userNickName,
         TO_CHAR(R.RECIPE_WRITE_DATE, 'YYYY-MM-DD') AS recipeWriteDate,
@@ -283,7 +283,6 @@
         #{recipeNumber}, #{userNumber}, #{recipeTitle}, #{recipeText}, #{recipeType}, SYSDATE
         )
     </insert>
-
 
     <!-- 사진 테이블 추가-->
     <insert id="insertMyPhoto" parameterType="RecipePhotoDTO">

@@ -1,12 +1,8 @@
 package com.dr.controller.rank;
 
-import com.dr.dto.myPage.PointCheckDTO;
 import com.dr.dto.rank.RankDTO;
-import com.dr.mapper.rank.RankMapper;
 import com.dr.service.rank.RankService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +19,6 @@ import java.util.List;
 public class RankController {
 
     private final RankService rankService;
-    private final RankMapper rankMapper;
 
     // 사용자 랭킹 페이지
     @GetMapping("/userRank")
