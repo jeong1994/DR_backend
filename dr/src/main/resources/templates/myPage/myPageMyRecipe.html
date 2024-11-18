@@ -49,7 +49,7 @@
                 <div th:each="recipe : ${userRecipes}" class="myPage-myRecipeprideOne">
                     <div class="myPage-myRecipeLeft">
                         <a th:href="${recipe.recipeType == '챗봇레시피' ? '/recipe/chatBotDetailPage?recipeNumber=' + recipe.recipeNumber : '/recipe/myDetailPage?recipeNumber=' + recipe.recipeNumber}">
-                            <img id="myPage-myRecipeOne" th:src="@{/image/myPage/{photo}(photo=${recipe.recipePhoto})}" alt="레시피 사진">
+                            <img id="myPage-myRecipeOne" th:src="@{/image/photo/} + ${recipe.recipePhoto}" alt="레시피 사진">
                         </a>
                     </div>
                     <div class="myPage-myRecipeInside">
