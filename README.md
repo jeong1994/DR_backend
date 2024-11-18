@@ -676,13 +676,13 @@ Spring Boot 프로젝트 맛있는재활용
 ![API_pointShop](https://github.com/user-attachments/assets/0a47721b-89a9-424f-9be5-9fb464579622)<br><br>
 ![API_search](https://github.com/user-attachments/assets/2eefaaa5-02d8-4cab-b824-bc5080929449)<br><br>
 
-## 개발 내용
+<!-- ## 개발 내용
 
 - <a href="naver.com" target="_blank">추후 내 기술 블로그로...</a>
 - <a href="naver.com" target="_blank">추후 내 기술 블로그로...</a>
 - <a href="naver.com" target="_blank">추후 내 기술 블로그로...</a>
 
-<br>,,,
+<br>,,, -->
 
 ## 마치며   
 ### 8️⃣ 프로젝트 보완사항   
