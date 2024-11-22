@@ -70,9 +70,9 @@ Spring Boot 프로젝트 맛있는재활용
 
 ### 4️⃣ 실행 화면
   <details>
-    <summary>OAuth2 회원 관련 (Click)</summary>
+    <summary>OAuth2 회원 및 헤더 세션 관련 (Click)</summary>
 
-  **1. OAuth 2.0 kakao 로그인 화면**<br>
+  **1. OAuth 2.0 kakao 로그인 및 헤더 세션 화면**<br>
   ![소셜로그인1](https://github.com/user-attachments/assets/f99456bd-e0b0-4e59-8343-e8f0b832ac01)
   
   ![소셜로그인2](https://github.com/user-attachments/assets/023b3ccc-0965-40b0-be83-e3bf14d8ea2f)
