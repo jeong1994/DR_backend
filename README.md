@@ -39,10 +39,11 @@ Spring Boot 프로젝트 맛있는재활용
 제가 구현한 프로젝트의 주요 기능은 다음과 같습니다.
 
 - **사용자 -** OAuth 2.0 카카오 로그인, 회원가입시 유효성 검사 및 중복 검사
-- **메인 -** 공공데이터 조회, 음식물쓰레기 계산기, 헤더 검색창
+- **메인 -** 공공데이터 조회, 음식물쓰레기 계산기
 - **챗봇 -** CRUD 기능, 인공지능 채팅
 - **포인트샵 -** CRUD 기능, 문자 전송, 구매시 유효성 검사 
-- **헤더 검색창 -** 조회기능
+- **헤더 검색창 및 세션 -** 검색창 조회기능 및 세션처리
+- **이용약관 및 개인정보처리방침 -** 
 
 ### 3️⃣ 사용 기술
 
@@ -69,9 +70,9 @@ Spring Boot 프로젝트 맛있는재활용
 
 ### 4️⃣ 실행 화면
   <details>
-    <summary>OAuth2 회원 관련 (Click)</summary>
+    <summary>OAuth2 회원 및 헤더 세션 관련 (Click)</summary>
 
-  **1. OAuth 2.0 kakao 로그인 화면**<br>
+  **1. OAuth 2.0 kakao 로그인 및 헤더 세션 화면**<br>
   ![소셜로그인1](https://github.com/user-attachments/assets/f99456bd-e0b0-4e59-8343-e8f0b832ac01)
   
   ![소셜로그인2](https://github.com/user-attachments/assets/023b3ccc-0965-40b0-be83-e3bf14d8ea2f)
