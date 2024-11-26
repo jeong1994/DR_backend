@@ -120,6 +120,9 @@ Spring Boot 프로젝트 맛있는재활용
 
   ![메인공공데이터3](https://github.com/user-attachments/assets/54afcea9-a4b1-42fb-a361-3c0573c5a776)<br>
   선택한 월에 대한 데이터로 변경되면서 관련 타이틀과 그래프가 변경된다
+
+  ![업데이트전안내](https://github.com/user-attachments/assets/7477fe66-a041-48ce-871d-a4b3c90ef337)<br>
+  현재 기준 이후의 달을 선택시 안내창이 뜨며 데이터는 현재 데이터로 유지된다
   <br><br><br>
 
   **2. 메인페이지 음식물쓰레기 계산기 화면**
