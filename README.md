@@ -658,7 +658,7 @@ Spring Boot 프로젝트 맛있는재활용
 ![ERD_BOARD](https://github.com/user-attachments/assets/3164ca6d-c73e-4425-baa9-d3b5381eb5a2)
 ![ERD_RECIPE](https://github.com/user-attachments/assets/39fe62cc-e2fe-467f-8976-7d79509495cd)
 ![ERD_PRODUCT](https://github.com/user-attachments/assets/73bf54c8-f5f9-41e9-8381-0431c3a1e594)
-![ERD_PHOTO](https://github.com/user-attachments/assets/5d7022fb-7f6b-4bf9-80dc-eddc92c03e94)
+![ERD_PHOTO](https://github.com/user-attachments/assets/d49594f4-89fa-4303-888b-6e59118be937)
 ![ERD_SCORE](https://github.com/user-attachments/assets/c7702d30-61f7-4260-97d1-fcadf9f7277f)
 ![ERD_POINT](https://github.com/user-attachments/assets/a6c8b216-8d20-45e4-838c-08a7e5c567ec)
 ![ERD_STEAM](https://github.com/user-attachments/assets/b0bb863a-4627-4b66-a095-e6f6763141b8)
